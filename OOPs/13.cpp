@@ -9,6 +9,8 @@ using namespace std;
 // Operators that cannot be overloaded are:
 // Class members access operator-[.,.*]
 // Scope resolution cann't be overload (::)
+// sizeof()
+// conditional operator(?:)
 
 // Rules:
 // Only existingoperators can be overloaded
@@ -62,7 +64,8 @@ int main()
     obj2.operator=(tobj1); // assigment operator called
     // temp tobj1;
     temp addResult;
-    addResult = tobj1.operator+(obj2);
+    addResult = tobj1.operator+(obj2); // tbj1 is invoking object while obj2 is a parameter
+    addResult = tobj1 + obj2;
     tobj1.operator=(obj2);
     addResult.display();
 
