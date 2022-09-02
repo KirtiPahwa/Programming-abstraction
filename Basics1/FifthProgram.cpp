@@ -23,13 +23,14 @@ int main()
 
     double d = 4.2455366399;
     cout << d << endl; // by default precision while cout is 5 so its rounding off d upto 5 decimal points
-    cout.precision(8); // changed the precision to print upto 8 decimal places . So the value is rounding off and making 7 digits decimal expansion
+    // cout.precision(8); // changed the precision to print upto 8 decimal places . So the value is rounding off and making 7 digits decimal expansion
     cout << d << endl;
     // cout << fixed << d << endl; // fixed stop rounding off the no. and prints the decimal expansion upto 8 without rounding off
     double e = 30;
     double f = 10000.032;
     double pi = 3.1416;
-    std::cout.precision(5);
+    // std::cout.precision(6);
+    cout << e << " " << f << " " << pi << endl;
     std::cout << std::showpoint << e << '\t' << f << '\t' << pi << '\n';
     std::cout << std::noshowpoint << e << '\t' << f << '\t' << pi << '\n';
 

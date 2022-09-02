@@ -14,7 +14,7 @@ int main()
     char *p = &a;
     cout << sizeof(p) << endl;
 
-    // NExt program
+    // Next program
     int var = 6;
     int *ptr1 = &var;
     int *ptr2 = NULL;
