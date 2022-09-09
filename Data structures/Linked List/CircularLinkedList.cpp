@@ -88,17 +88,22 @@ void insertInBetween(Node *&head, int index, int data)
     else
     {
         Node *node = new Node(data);
-        temp = temp->next;
-        int i = 2;
-        while (temp != head)
+        int i = 1;
+        while (temp->next != head)
         {
             if (i == index - 1)
             {
                 node->next = temp->next;
                 temp->next = node;
+                return;
             }
             i++;
             temp = temp->next;
+        }
+        if (index - 1 == i)
+        {
+            temp->next = node;
+            node->next = head;
         }
     }
 }
@@ -108,16 +113,20 @@ void deleteNode(Node *&head, int key)
     Node *nodeToDelete = NULL;
     if (temp && temp->data == key)
     {
-        nodeToDelete = temp;
-        while (temp != head)
-
-            head = temp->next;
+        nodeToDelete = head;
+        while (temp->next != head)
+        {
+            temp = temp->next;
+        }
+        temp->next = head->next;
+        head = head->next;
+        delete nodeToDelete;
     }
     else
     {
-        while (temp != head)
+        while (temp->next != head)
         {
-            if (temp->next && temp->next->data == key)
+            if (temp->next->data == key)
             {
                 nodeToDelete = temp->next;
                 temp->next = temp->next->next;
@@ -136,7 +145,7 @@ int main()
     insertAtTail(head, 4);
     insertAtTail(head, 5);
     insertInBetween(head, 3, 7);
-    // deleteNode(head, 0);
+    deleteNode(head, 4);
     traverseLinkedList(head);
 
     return 0;

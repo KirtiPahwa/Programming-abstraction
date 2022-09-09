@@ -36,7 +36,6 @@ public:
                 return;
             }
             node->next = head->next;
-            cout<<node->next
             head = node;
         }
         catch (exception &e)
@@ -46,11 +45,10 @@ public:
     }
     T top()
     {
-        if (isEmpty() == 1)
+        if (isEmpty())
         {
             return -1;
         }
-        cout << head->data << endl;
         return head->data;
     }
     bool isEmpty()
@@ -66,14 +64,12 @@ public:
     }
     void pop()
     {
-        cout << isEmpty() << endl;
-        if (isEmpty() == 1)
+        if (isEmpty())
         {
             cout << "Stack Underflow" << endl;
             return;
         }
         Node *tobedel = head;
-        cout << head->next->data << endl;
         head = head->next;
         delete tobedel;
     }
@@ -82,15 +78,15 @@ public:
 int main()
 {
     Stack<int> s;
-    s.push(10);
+    s.push(1);
     s.push(7);
     s.push(8);
     cout << s.top() << endl;
     // s.push(9);
     // s.pop();
-    // cout << s.top() << endl;
-    // // s.pop();
-    s.push(4);
+    cout << s.top() << endl;
+    // s.pop();
+    // s.push(4);
 
     return 0;
 }

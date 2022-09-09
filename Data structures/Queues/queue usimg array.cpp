@@ -11,8 +11,8 @@ public:
     {
         this->size = size;
         arr = new int(size);
-        front = 0;
-        rear = 0;
+        front = -1;
+        rear = -1;
     }
     void enqueue(int ele)
     {
@@ -20,7 +20,11 @@ public:
         {
             cout << "Overflow" << endl;
         }
-        arr[rear++] = ele;
+        if (front == -1)
+        {
+            front++;
+        }
+        arr[++rear] = ele;
     }
     void dequeue()
     {
@@ -42,7 +46,7 @@ public:
     }
     bool is_full()
     {
-        if (size == rear)
+        if (size == rear + 1)
         {
             return 1;
         }
@@ -53,7 +57,7 @@ public:
     }
     bool is_empty()
     {
-        if (front == rear)
+        if (front == rear == -1)
         {
             return 1;
         }
