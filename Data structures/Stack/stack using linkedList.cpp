@@ -20,7 +20,7 @@ public:
     int size;
     Stack()
     {
-        head = NULL;
+        this->head = NULL;
         size = 0;
     }
     void push(T ele)
@@ -30,12 +30,12 @@ public:
 
             Node *node = new Node(ele); // bad_alloc exception can be there on fullness of heap
             size++;
-            if (head == NULL)
+            if (this->head == NULL)
             {
-                head = node;
+                this->head = node;
                 return;
             }
-            node->next = head->next;
+            node->next = head;
             head = node;
         }
         catch (exception &e)
@@ -82,8 +82,7 @@ int main()
     s.push(7);
     s.push(8);
     cout << s.top() << endl;
-    // s.push(9);
-    // s.pop();
+    s.pop();
     cout << s.top() << endl;
     // s.pop();
     // s.push(4);
