@@ -1,4 +1,7 @@
+// header file defines the interface to the class but it does not include the implementation of those functions . but it does not include the implementation of those functions. So, what we expect in a header file is going to be something akin to an API, where we're going to define exactly what programmers can call in our class and exactly where a class stores, but not how those things work. 
+#pragma once // this instructs the compiler to only compile the code once.Even if multiple people use our class, we'll only want the definition of our class to be defined exactly once. 
 #include <iostream>
+// In the CPP file, we call this file the implementation file and it's the code that contains all of the logic to implement our class. Let's take a look at this
 #include <fstream>
 #include "time.h"
 #include <cstring>
