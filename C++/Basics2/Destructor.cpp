@@ -16,7 +16,13 @@ To add custom behaviour to the end of life of the fuction , a custome destructor
 - All destructors have zero arguments and no return type.
 Cube::~Cube(); //Custom destructor
 
+Custome Destructor:
+It is essential when an object allocates an exernal resource that must be closed or freed when the object is destroyed.
+- heap memory
+- open files
+- shared memory
 */
+
 #include <iostream>
 using namespace std;
 
